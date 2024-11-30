@@ -3,9 +3,7 @@
 import logging
 import os
 
-# import datetime
-import fillpdf
-from fillpdf import fillpdfs
+from PyPDF2 import PdfReader, PdfWriter
 
 DOMAIN = "fill_pdf_form"
 
@@ -34,29 +32,21 @@ def setup(hass, config):
 
         if input_file_path is not None and os.path.exists(full_input_file_path):
             ## Retrieve fields ##
-            fillpdfs.get_form_fields(full_input_file_path)
+            reader = PdfReader(full_input_file_path)
+            writer = PdfWriter()
 
-            _LOGGER.error(updated_fields)
+            page = reader.pages[0]
+            fields = reader.get_fields()
 
-            ## Compute fields ##
-            # today = datetime.date.today()
-            # last_day_of_prev_month = today.replace(day=1) - datetime.timedelta(days=1)
-            # updated_fields = {
-            #    "month": last_day_of_prev_month.strftime("%B %Y"),
-            #    "end_of_month": last_day_of_prev_month.strftime("%d %B %Y"),
-            #    "date": today.strftime("%d %B %Y"),
-            # }
+            _LOGGER.info('input fields', updated_fields)
+            _LOGGER.info('fields from form', fields)
 
-            ## Fill fields and flatten file ##
-            fillpdfs.write_fillable_pdf(
-                full_input_file_path,
-                full_output_file_path,
-                updated_fields,
-            )
-            fillpdfs.flatten_pdf(
-                full_output_file_path,
-                full_output_file_path,
-            )
+            ## Fill fields and save file ##
+            writer.add_page(page)
+            writer.update_page_form_field_values(writer.pages[0], updated_fields)
+
+            with open(full_output_file_path, "wb") as output_stream:
+                writer.write(output_stream)
         else:
             _LOGGER.error(
                 "'%s' is not an allowed directory or file path not provided",

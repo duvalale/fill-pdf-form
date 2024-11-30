@@ -4,12 +4,13 @@
     "codeowners": [
       "@duvalale"
     ],
-    "config_flow": true,
+    "config_flow": false,
     "dependencies": [],
     "documentation": "https://www.home-assistant.io/integrations/fill_pdf_form",
     "issue_tracker": "https://www.home-assistant.io/integrations/fill_pdf_form/issues",
     "homekit": {},
-    "requirements": ["dateparser", "fillpdf"],
+    "requirements": ["PyPDF2"],
     "ssdp": [],
-    "zeroconf": []
+    "zeroconf": [],
+    "version": "0.0.1"
   }
