@@ -7,6 +7,7 @@
     "config_flow": true,
     "dependencies": [],
     "documentation": "https://www.home-assistant.io/integrations/fill_pdf_form",
+    "issue_tracker": "https://www.home-assistant.io/integrations/fill_pdf_form/issues",
     "homekit": {},
     "requirements": ["dateparser", "fillpdf"],
     "ssdp": [],

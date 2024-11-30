@@ -3,4 +3,9 @@ This is a custom component for Home Assistant. This integration allows to fill a
 
 ## Installation
 
+Clone this repo into the custom_components directory:
+
+cd [HA_HOME]/custom_components
+git clone https://github.com/duvalale/fill-pdf-form.git
+
 ## Configuration
