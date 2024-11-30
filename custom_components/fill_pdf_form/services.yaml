@@ -1,0 +1,18 @@
+test_service:
+  name: Fill PDF Form
+  description: A simple PDF Form filler
+  fields:
+    input_file_path:
+      name: Input file path
+      description: The input file path in the config directory
+      example: "/my.pdf"
+      required: true
+    output_file_path:
+      name: Output file path
+      description: The output file path in the config directory
+      example: "/my.pdf"
+    fields_data:
+      name: Fields data
+      description: The fields data to fill the PDF file with
+      example: { "month": "October" }
+      required: true

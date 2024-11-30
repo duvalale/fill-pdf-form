@@ -1,0 +1,14 @@
+{
+    "domain": "fill_pdf_form",
+    "name": "Fill PDF Form",
+    "codeowners": [
+      "@duvalale"
+    ],
+    "config_flow": true,
+    "dependencies": [],
+    "documentation": "https://www.home-assistant.io/integrations/fill_pdf_form",
+    "homekit": {},
+    "requirements": ["dateparser", "fillpdf"],
+    "ssdp": [],
+    "zeroconf": []
+  }
