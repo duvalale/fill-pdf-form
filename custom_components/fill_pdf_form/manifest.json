@@ -7,11 +7,11 @@
     "config_flow": false,
     "dependencies": [],
     "documentation": "https://www.home-assistant.io/integrations/fill_pdf_form",
+    "iot_class": "calculated",
     "issue_tracker": "https://www.home-assistant.io/integrations/fill_pdf_form/issues",
     "homekit": {},
     "requirements": ["PyPDF2"],
     "ssdp": [],
     "zeroconf": [],
-    "version": "0.0.1",
-    "iot_class": "calculated"
+    "version": "0.0.1"
   }
