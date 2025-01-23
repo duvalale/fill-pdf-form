@@ -12,5 +12,6 @@
     "requirements": ["PyPDF2"],
     "ssdp": [],
     "zeroconf": [],
-    "version": "0.0.1"
+    "version": "0.0.1",
+    "iot_class": "calculated"
   }
